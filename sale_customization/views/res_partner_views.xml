@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="partner_form_extended_view_sale_customization" model="ir.ui.view">
+        <field name="name">partner.form.extended.view.sale.customization</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form" />
+        <field name="arch" type="xml">
+            <field name="vat" position="after">
+                <field name="last_order_date" widget="date"/>
+            </field>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="view_partner_tree_inherit_sale_custom">
+        <field name="name">res.partner.tree.form.inherit.sale.custom</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <field name="city" position="before">
+                <field name="last_order_date" widget="date"/>
+            </field>
+        </field>
+    </record>
+</odoo>
